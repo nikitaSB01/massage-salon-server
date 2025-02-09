@@ -8,6 +8,10 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(bodyParser.json());
 
+app.get("/", (req, res) => {
+  res.send("Сервер работает! API доступен по /api/contact");
+});
+
 app.post("/api/contact", (req, res) => {
   const { name, phone, message } = req.body;
 
